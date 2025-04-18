@@ -1,0 +1,1751 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>EcoThreads: Fighting Fast Fashion Impact</title>
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.0.0/css/all.min.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <style>
+        body {
+            font-family: 'Poppins', sans-serif;
+            color: #333;
+            background-color: #f9f9f9;
+        }
+        .hero-gradient {
+            background: linear-gradient(135deg, #4CAF50 0%, #2E7D32 100%);
+        }
+        .section-heading {
+            position: relative;
+            padding-bottom: 10px;
+        }
+        .section-heading::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 60px;
+            height: 3px;
+            background-color: #4CAF50;
+        }
+        .stat-card {
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+        .stat-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
+        }
+        .donor-card {
+            transition: transform 0.3s ease;
+        }
+        .donor-card:hover {
+            transform: scale(1.02);
+        }
+        .brand-card {
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+        .brand-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
+        }
+        .timeline {
+            position: relative;
+            padding-left: 30px;
+        }
+        .timeline::before {
+            content: '';
+            position: absolute;
+            left: 0;
+            top: 0;
+            width: 2px;
+            height: 100%;
+            background-color: #4CAF50;
+        }
+        .timeline-item {
+            position: relative;
+            padding-bottom: 30px;
+        }
+        .timeline-item::before {
+            content: '';
+            position: absolute;
+            left: -34px;
+            top: 0;
+            width: 10px;
+            height: 10px;
+            border-radius: 50%;
+            background-color: #4CAF50;
+        }
+        .impact-card {
+            border-left: 4px solid #4CAF50;
+        }
+        .exchange-step {
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+        .exchange-step:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
+        }
+        .chart-container {
+            position: relative;
+            height: 400px;
+            width: 100%;
+            margin: 20px auto;
+        }
+        .recycling-initiative-card {
+            border-left: 4px solid #4CAF50;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+        .recycling-initiative-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
+        }
+        .progress-bar {
+            background-color: #4CAF50;
+            height: 24px;
+            border-radius: 12px;
+            transition: width 1s ease-in-out;
+        }
+        .progress-container {
+            background-color: #e9e9e9;
+            border-radius: 12px;
+            height: 24px;
+            width: 100%;
+            margin-bottom: 15px;
+        }
+    </style>
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="bg-white shadow">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between h-16">
+                <div class="flex">
+                    <div class="flex-shrink-0 flex items-center">
+                        <h1 class="text-2xl font-bold text-green-700">EcoThreads</h1>
+                    </div>
+                    <div class="hidden sm:ml-6 sm:flex sm:space-x-8">
+                        <a href="#impact" class="border-transparent text-gray-700 hover:text-green-700 inline-flex items-center px-1 pt-1 text-sm font-medium">
+                            Fast Fashion Impact
+                        </a>
+                        <a href="#polyester" class="border-transparent text-gray-700 hover:text-green-700 inline-flex items-center px-1 pt-1 text-sm font-medium">
+                            Polyester & Synthetics
+                        </a>
+                        <a href="#weavers" class="border-transparent text-gray-700 hover:text-green-700 inline-flex items-center px-1 pt-1 text-sm font-medium">
+                            Traditional Weavers
+                        </a>
+                        <a href="#brands" class="border-transparent text-gray-700 hover:text-green-700 inline-flex items-center px-1 pt-1 text-sm font-medium">
+                            Sustainable Brands
+                        </a>
+                        <a href="#recycling-rates" class="border-transparent text-gray-700 hover:text-green-700 inline-flex items-center px-1 pt-1 text-sm font-medium">
+                            Recycling Rates
+                        </a>
+                        <a href="#exchange" class="border-transparent text-gray-700 hover:text-green-700 inline-flex items-center px-1 pt-1 text-sm font-medium">
+                            Exchange & Donate
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <div class="hero-gradient">
+        <div class="max-w-7xl mx-auto py-16 px-4 sm:py-24 sm:px-6 lg:px-8 text-center">
+            <h1 class="text-4xl font-extrabold text-white sm:text-5xl sm:tracking-tight lg:text-6xl">
+                Fashion Revolution for a Sustainable Future
+            </h1>
+            <p class="mt-6 max-w-3xl mx-auto text-xl text-white">
+                Discover the true cost of fast fashion, explore sustainable alternatives, and join our community to make a difference through exchange and donation.
+            </p>
+            <div class="mt-10 max-w-sm mx-auto sm:max-w-none sm:flex sm:justify-center">
+                <div class="space-y-4 sm:space-y-0 sm:mx-auto sm:inline-grid sm:grid-cols-2 sm:gap-5">
+                    <a href="#exchange" class="flex items-center justify-center px-4 py-3 border border-transparent text-base font-medium rounded-md shadow-sm text-green-700 bg-white hover:bg-gray-100 sm:px-8">
+                        Donate Clothes
+                    </a>
+                    <a href="#brands" class="flex items-center justify-center px-4 py-3 border border-transparent text-base font-medium rounded-md shadow-sm text-white bg-green-900 hover:bg-green-800 sm:px-8">
+                        Explore Sustainable Brands
+                    </a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Key Stats -->
+    <div class="bg-white">
+        <div class="max-w-7xl mx-auto py-16 px-4 sm:py-24 sm:px-6 lg:px-8">
+            <div class="text-center">
+                <h2 class="text-base font-semibold text-green-600 tracking-wide uppercase">The Reality</h2>
+                <p class="mt-1 text-4xl font-extrabold text-gray-900 sm:text-5xl sm:tracking-tight">
+                    Fast Fashion by the Numbers
+                </p>
+                <p class="max-w-xl mt-5 mx-auto text-xl text-gray-500">
+                    The fashion industry is one of the largest polluters globally, with devastating consequences for our planet.
+                </p>
+            </div>
+
+            <div class="mt-16 grid grid-cols-1 gap-8 sm:grid-cols-2 lg:grid-cols-4">
+                <div class="stat-card pt-6 bg-white rounded-lg shadow-lg overflow-hidden">
+                    <div class="px-6 pb-6">
+                        <h3 class="text-4xl font-extrabold text-green-600">10%</h3>
+                        <p class="mt-2 text-lg font-medium text-gray-900">Of global carbon emissions are produced by the fashion industry</p>
+                    </div>
+                </div>
+
+                <div class="stat-card pt-6 bg-white rounded-lg shadow-lg overflow-hidden">
+                    <div class="px-6 pb-6">
+                        <h3 class="text-4xl font-extrabold text-green-600">20%</h3>
+                        <p class="mt-2 text-lg font-medium text-gray-900">Of global wastewater comes from fabric dyeing and treatment</p>
+                    </div>
+                </div>
+
+                <div class="stat-card pt-6 bg-white rounded-lg shadow-lg overflow-hidden">
+                    <div class="px-6 pb-6">
+                        <h3 class="text-4xl font-extrabold text-green-600">700,000</h3>
+                        <p class="mt-2 text-lg font-medium text-gray-900">Microplastic fibers are released in a single laundry load of polyester clothes</p>
+                    </div>
+                </div>
+
+                <div class="stat-card pt-6 bg-white rounded-lg shadow-lg overflow-hidden">
+                    <div class="px-6 pb-6">
+                        <h3 class="text-4xl font-extrabold text-green-600">85%</h3>
+                        <p class="mt-2 text-lg font-medium text-gray-900">Of textiles end up in landfills each year, equivalent to one garbage truck per second</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Fast Fashion Impact Section -->
+    <div id="impact" class="bg-gray-50 py-16">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="lg:text-center">
+                <h2 class="text-base text-green-600 font-semibold tracking-wide uppercase">Environmental Crisis</h2>
+                <p class="mt-2 text-3xl leading-8 font-extrabold tracking-tight text-gray-900 sm:text-4xl">
+                    The True Cost of Fast Fashion
+                </p>
+                <p class="mt-4 max-w-2xl text-xl text-gray-500 lg:mx-auto">
+                    Fast fashion has become one of the largest contributors to environmental degradation globally.
+                </p>
+            </div>
+
+            <div class="mt-16">
+                <div class="space-y-12">
+                    <div class="impact-card bg-white p-6 rounded-lg shadow-md">
+                        <h3 class="text-2xl font-bold text-gray-900 mb-4">Environmental Impact</h3>
+                        <div class="prose max-w-none text-gray-700">
+                            <p>The fashion industry is currently responsible for more annual carbon emissions than all international flights and maritime shipping combined. If the fashion sector continues on its current trajectory, that share of the carbon budget could jump to 26% by 2050.</p>
+                            <p class="mt-4">Water pollution is another critical issue. Textile dyeing is the world's second-largest polluter of water, as the water leftover from the dyeing process is often dumped into ditches, streams, or rivers. This wastewater contains toxic substances such as lead, mercury, and arsenic, among others, which are extremely harmful to aquatic life and the health of millions of people living near these waterbodies.</p>
+                            <p class="mt-4">Fast fashion also contributes significantly to plastic pollution. As synthetic, non-biodegradable materials like polyester, nylon, and acrylic have become immensely popular in fast fashion, they shed microplastics with each wash, ultimately finding their way into our oceans and food chain.</p>
+                        </div>
+                    </div>
+
+                    <div class="impact-card bg-white p-6 rounded-lg shadow-md">
+                        <h3 class="text-2xl font-bold text-gray-900 mb-4">Social Impact</h3>
+                        <div class="prose max-w-none text-gray-700">
+                            <p>The fast fashion industry has devastating consequences for garment workers. In many manufacturing countries, workers face dangerous working conditions, extremely low wages, and denial of basic human rights. The 2013 Rana Plaza collapse in Bangladesh, which killed over 1,100 people, highlighted the unsafe conditions in which these workers operate.</p>
+                            <p class="mt-4">Traditional weavers and artisans across the globe are being displaced as mass-produced, cheap clothing floods markets. These traditional crafts, developed over centuries, are at risk of being lost forever as younger generations abandon these skills for other work.</p>
+                            <p class="mt-4">The industry also contributes to exploitation through child labor, forced labor, and discrimination against women who make up the majority of garment workers globally but often face gender-based violence and harassment in the workplace.</p>
+                        </div>
+                    </div>
+
+                    <div class="impact-card bg-white p-6 rounded-lg shadow-md">
+                        <h3 class="text-2xl font-bold text-gray-900 mb-4">Health Impact</h3>
+                        <div class="prose max-w-none text-gray-700">
+                            <p>Clothing production involves numerous chemicals, many of which are harmful to human health. BPA, PFAS, and phthalates found in clothing have been found to mimic hormones and interfere with our endocrine system, potentially leading to health issues from weight fluctuations and fatigue to infertility.</p>
+                            <p class="mt-4">Workers in textile factories are directly exposed to hazardous substances during production, leading to respiratory problems, skin diseases, and even cancer. Studies have shown significantly higher rates of miscarriage and birth defects in babies born to women working in textile factories with poor chemical management.</p>
+                            <p class="mt-4">For consumers, skin absorption of toxic chemicals from clothing is a growing concern. Our skin, the largest organ of the body, can absorb substances it comes in contact with, including chemicals used in clothing production that may remain in finished garments.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Polyester and Synthetic Clothing Section -->
+    <div id="polyester" class="bg-white py-16">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center">
+                <h2 class="text-base text-green-600 font-semibold tracking-wide uppercase">Synthetic Fabrics</h2>
+                <p class="mt-2 text-3xl leading-8 font-extrabold tracking-tight text-gray-900 sm:text-4xl">
+                    The Hidden Dangers of Polyester
+                </p>
+                <p class="mt-4 max-w-2xl text-xl text-gray-500 mx-auto">
+                    Polyester and other petrochemical-based fabrics pose significant threats to both the environment and human health.
+                </p>
+            </div>
+
+            <div class="mt-16 grid grid-cols-1 gap-8 md:grid-cols-2">
+                <div class="bg-green-50 p-6 rounded-lg shadow-md">
+                    <h3 class="text-2xl font-bold text-gray-900 mb-4">What Is Polyester?</h3>
+                    <div class="prose max-w-none text-gray-700">
+                        <p>Polyester is a synthetic fiber derived from petroleum, making it a type of plastic. It was first introduced in the 1940s and has since become one of the most commonly used textiles in the fashion industry due to its durability, wrinkle resistance, and low cost.</p>
+                        <p class="mt-4">The production process of polyester involves extracting crude oil from the earth, refining it, and then using chemical reactions to create the polymer. This polymer is then melted, extruded into fibers, and finally woven or knitted into fabric.</p>
+                        <p class="mt-4">Unlike natural fibers like cotton or wool, polyester is not biodegradable and can take between 20 to 200 years to decompose, contributing significantly to landfill waste and environmental pollution.</p>
+                    </div>
+                </div>
+
+                <div class="bg-green-50 p-6 rounded-lg shadow-md">
+                    <h3 class="text-2xl font-bold text-gray-900 mb-4">Environmental Impact</h3>
+                    <div class="prose max-w-none text-gray-700">
+                        <p>The environmental footprint of polyester begins with its production, which is energy-intensive and relies on non-renewable fossil fuels. The manufacturing process emits volatile organic compounds (VOCs) and acid gases such as hydrogen chloride, all of which contribute to air pollution.</p>
+                        <p class="mt-4">Polyester production also requires large amounts of water for cooling, along with lubricants which can contaminate local water sources. Additionally, the dyeing process for polyester uses disperse dyes and carriers that are often toxic and non-biodegradable.</p>
+                        <p class="mt-4">Perhaps the most concerning aspect is microplastic pollution. When washed, polyester garments release tiny plastic particles (microfibers) that end up in waterways and eventually in the ocean. A single laundry load of polyester clothes can release up to 700,000 microplastic fibers.</p>
+                    </div>
+                </div>
+
+                <div class="bg-green-50 p-6 rounded-lg shadow-md col-span-1 md:col-span-2">
+                    <h3 class="text-2xl font-bold text-gray-900 mb-4">Microplastics: The Invisible Threat</h3>
+                    <div class="prose max-w-none text-gray-700">
+                        <p>Recent studies have shown that wearing polyester releases more microplastics than washing them. During normal wear, up to 400 fibers per gram of fabric can be shed through friction against surfaces or even our skin. These microplastics are not just contaminating our environment, but we are also inhaling and swallowing them.</p>
+                        <p class="mt-4">Once in our bodies, microplastics can cause inflammation, disrupt hormone function, and potentially lead to long-term health issues. In marine environments, these particles are ingested by wildlife, causing physical harm, starvation, and death. Additionally, microplastics can absorb toxic chemicals from the surrounding water, which can be harmful to wildlife when ingested.</p>
+                        <p class="mt-4">The ubiquity of microplastics in our environment is alarming – they've been found in remote parts of the ocean, in the air we breathe, and in the food we eat. As polyester and other synthetic textiles continue to dominate the fashion industry, the microplastic problem is only expected to worsen unless significant changes are made to how we produce and consume clothing.</p>
+                    </div>
+                </div>
+
+                <div class="bg-green-50 p-6 rounded-lg shadow-md">
+                    <h3 class="text-2xl font-bold text-gray-900 mb-4">Health Risks</h3>
+                    <div class="prose max-w-none text-gray-700">
+                        <p>Petrochemicals in clothing pose several health risks. Many synthetic fabrics contain harmful chemicals such as formaldehyde, perfluorinated chemicals (PFCs), phthalates, and antimony. These chemicals have been linked to various health issues, including skin irritation, respiratory problems, immune system suppression, and hormone disruption.</p>
+                        <p class="mt-4">Antimony, a toxic heavy metal used as a catalyst in polyester production, can leach from fabrics and be absorbed through the skin. It has been associated with heart, lung, and kidney problems. Formaldehyde, often used for wrinkle resistance and color fastness, is a known carcinogen that can cause skin irritation and allergic reactions.</p>
+                        <p class="mt-4">Azo dyes, commonly used to color synthetic textiles, can break down into aromatic amines, some of which are carcinogenic. These chemicals can be absorbed through the skin, particularly when the wearer is sweating.</p>
+                    </div>
+                </div>
+
+                <div class="bg-green-50 p-6 rounded-lg shadow-md">
+                    <h3 class="text-2xl font-bold text-gray-900 mb-4">Sustainable Alternatives</h3>
+                    <div class="prose max-w-none text-gray-700">
+                        <p>Thankfully, there are numerous sustainable alternatives to polyester and other synthetic fabrics:</p>
+                        <ul class="mt-2">
+                            <li><strong>Organic Cotton:</strong> Grown without synthetic pesticides or fertilizers, organic cotton has a significantly lower environmental impact than conventional cotton.</li>
+                            <li><strong>Hemp:</strong> One of the most durable natural fibers, hemp grows quickly without the need for pesticides and requires less water than cotton.</li>
+                            <li><strong>Linen:</strong> Made from flax plant fibers, linen production uses minimal water and pesticides. It's fully biodegradable and becomes stronger when wet.</li>
+                            <li><strong>Tencel/Lyocell:</strong> A semi-synthetic fiber made from wood pulp, produced in a closed-loop system that reuses chemicals and water.</li>
+                            <li><strong>Recycled Polyester:</strong> Made from post-consumer plastic bottles, reducing waste and using less energy than virgin polyester.</li>
+                            <li><strong>Wool:</strong> A natural, renewable fiber that is biodegradable and can be produced sustainably.</li>
+                        </ul>
+                        <p class="mt-4">These materials not only reduce environmental impact but often create healthier products for consumers, free from many of the harmful chemicals found in conventional synthetic fabrics.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Traditional Weavers Section -->
+    <div id="weavers" class="bg-gray-50 py-16">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center">
+                <h2 class="text-base text-green-600 font-semibold tracking-wide uppercase">Cultural Heritage</h2>
+                <p class="mt-2 text-3xl leading-8 font-extrabold tracking-tight text-gray-900 sm:text-4xl">
+                    Traditional Weavers Under Threat
+                </p>
+                <p class="mt-4 max-w-2xl text-xl text-gray-500 mx-auto">
+                    Fast fashion's rise is endangering centuries-old textile traditions and the communities that preserve them.
+                </p>
+            </div>
+
+            <div class="mt-16">
+                <div class="bg-white p-6 rounded-lg shadow-md">
+                    <h3 class="text-2xl font-bold text-gray-900 mb-4">The Disappearing Art of Traditional Weaving</h3>
+                    <div class="prose max-w-none text-gray-700">
+                        <p>Traditional textile crafts represent centuries of cultural knowledge and artistic expression. From the intricate ikat patterns of Indonesia to the vibrant handwoven fabrics of Ghana, these textile traditions tell stories of community, spirituality, and identity. However, the rise of fast fashion and mechanized textile production has pushed many of these traditions to the brink of extinction.</p>
+                        <p class="mt-4">In Meghalaya, India, natural forms of dyeing with plants and unique traditional weaving patterns are at risk of disappearing entirely. Modern factories can replicate these designs using cheaper materials and mass production techniques, causing traditional weavers to lose their market and livelihood.</p>
+                        <p class="mt-4">As one weaver from Meghalaya explained, "People in the village no longer weave with the same intricate designs or patterns since they have no market for this intricate and high-value work. It is truly sad seeing that these women feel that there is no hope for their trade, and their only option is to let it die with them."</p>
+                    </div>
+                </div>
+
+                <div class="mt-8 grid grid-cols-1 gap-8 md:grid-cols-2">
+                    <div class="bg-white p-6 rounded-lg shadow-md">
+                        <h3 class="text-2xl font-bold text-gray-900 mb-4">Economic Impact</h3>
+                        <div class="prose max-w-none text-gray-700">
+                            <p>The economic consequences for traditional weaving communities are severe. As cheap, mass-produced textiles flood local markets, the demand for handmade fabrics declines, forcing many artisans to abandon their craft for other work.</p>
+                            <p class="mt-4">These changes affect not just individual weavers but entire communities where textile production has been a central economic activity for generations. Villages that once thrived through textile trade now face economic hardship as their primary source of income disappears.</p>
+                            <p class="mt-4">The loss of these economic opportunities also drives migration away from rural areas, further threatening the continuity of cultural traditions and community cohesion.</p>
+                        </div>
+                    </div>
+
+                    <div class="bg-white p-6 rounded-lg shadow-md">
+                        <h3 class="text-2xl font-bold text-gray-900 mb-4">Cultural Loss</h3>
+                        <div class="prose max-w-none text-gray-700">
+                            <p>Beyond the economic impact, the decline of traditional weaving represents an irreplaceable cultural loss. These textile traditions often encode cultural knowledge, with patterns and techniques passed down through generations.</p>
+                            <p class="mt-4">Many traditional textiles are integral to cultural ceremonies, rites of passage, and religious practices. When these crafts disappear, important cultural expressions and identities are lost as well.</p>
+                            <p class="mt-4">As younger generations turn away from these labor-intensive practices, centuries of knowledge about natural dyes, sustainable fiber production, and intricate weaving techniques are at risk of being forgotten forever.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="mt-8 bg-white p-6 rounded-lg shadow-md">
+                    <h3 class="text-2xl font-bold text-gray-900 mb-4">Revival Initiatives</h3>
+                    <div class="prose max-w-none text-gray-700">
+                        <p>Despite these challenges, numerous initiatives around the world are working to preserve and revitalize traditional textile crafts:</p>
+                        <div class="mt-4">
+                            <h4 class="font-semibold">Case Study: Muezart in Meghalaya, India</h4>
+                            <p class="mt-2">This brand is collaborating with local weavers to preserve traditional patterns while adding modern design elements to make products marketable to contemporary consumers. They work with women who use natural plant-based dyes and traditional weaving techniques, creating a sustainable market for their skills.</p>
+                            <p class="mt-2">By fusing centuries-old traditions with modern designs, they're creating products that appeal to today's market while preserving cultural heritage. Their approach has helped provide sustainable livelihoods to village artisans who might otherwise have abandoned their craft.</p>
+                        </div>
+                        <div class="mt-4">
+                            <h4 class="font-semibold">Other Global Initiatives</h4>
+                            <ul class="mt-2">
+                                <li><strong>Cultural Heritage Preservation Programs:</strong> Government and NGO initiatives that document and preserve traditional textile techniques through education and training.</li>
+                                <li><strong>Fair Trade Organizations:</strong> Creating ethical supply chains that ensure traditional artisans receive fair wages for their work.</li>
+                                <li><strong>Designer Collaborations:</strong> Partnerships between traditional weavers and contemporary designers to create marketable products that honor traditional techniques.</li>
+                                <li><strong>Digital Documentation:</strong> Creating digital archives of patterns, techniques, and cultural knowledge to ensure these traditions aren't lost.</li>
+                                <li><strong>Community Tourism:</strong> Developing textile-focused tourism experiences that create economic incentives for communities to maintain their traditions.</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="mt-8 bg-white p-6 rounded-lg shadow-md">
+                    <h3 class="text-2xl font-bold text-gray-900 mb-4">How You Can Support Traditional Weavers</h3>
+                    <div class="prose max-w-none text-gray-700">
+                        <p>There are several ways individuals can help support traditional textile crafts:</p>
+                        <ul class="mt-2">
+                            <li><strong>Purchase Directly from Artisans:</strong> Seek out authentic handmade textiles from traditional weavers, either through fair trade organizations or direct from artisan communities.</li>
+                            <li><strong>Learn About Textile Traditions:</strong> Educate yourself about the cultural significance and techniques of traditional textiles from different regions.</li>
+                            <li><strong>Support Ethical Brands:</strong> Choose fashion brands that work directly with traditional artisans and ensure fair compensation for their skills.</li>
+                            <li><strong>Share Their Stories:</strong> Use social media and word-of-mouth to raise awareness about traditional textile crafts and their importance.</li>
+                            <li><strong>Visit Textile Museums and Cultural Centers:</strong> Support institutions that preserve and showcase traditional textile arts.</li>
+                            <li><strong>Learn Traditional Techniques:</strong> Take workshops or classes to learn traditional textile techniques yourself, helping keep these skills alive.</li>
+                            <li><strong>Donate to Preservation Organizations:</strong> Support nonprofits working to document and preserve endangered textile traditions.</li>
+                        </ul>
+                        <p class="mt-4">By valuing these traditional crafts and supporting the artisans who practice them, we can help ensure these important cultural traditions continue for future generations while also promoting sustainable alternatives to fast fashion.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Sustainable Brands Directory -->
+    <div id="brands" class="bg-white py-16">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center">
+                <h2 class="text-base text-green-600 font-semibold tracking-wide uppercase">Better Choices</h2>
+                <p class="mt-2 text-3xl leading-8 font-extrabold tracking-tight text-gray-900 sm:text-4xl">
+                    Sustainable Fashion Brands
+                </p>
+                <p class="mt-4 max-w-2xl text-xl text-gray-500 mx-auto">
+                    These brands are leading the way in ethical and environmentally responsible fashion.
+                </p>
+            </div>
+
+            <div class="mt-12 bg-green-50 p-6 rounded-lg shadow-md">
+                <h3 class="text-2xl font-bold text-gray-900 mb-4">What Makes a Brand Sustainable?</h3>
+                <div class="prose max-w-none text-gray-700">
+                    <p>Sustainable fashion brands prioritize environmental and social responsibility throughout their supply chains. Key criteria include:</p>
+                    <ul class="mt-2 grid grid-cols-1 md:grid-cols-2 gap-4">
+                        <li><strong>Ethical Labor Practices:</strong> Fair wages, safe working conditions, and respect for workers' rights.</li>
+                        <li><strong>Eco-Friendly Materials:</strong> Use of organic, recycled, or low-impact fabrics that minimize environmental harm.</li>
+                        <li><strong>Reduced Resource Use:</strong> Lower water usage, energy efficiency, and reduced carbon emissions.</li>
+                        <li><strong>Transparency:</strong> Clear communication about supply chains, manufacturing processes, and company practices.</li>
+                        <li><strong>Waste Reduction:</strong> Minimizing waste through efficient design, recycling, and circular business models.</li>
+                        <li><strong>Chemical Management:</strong> Avoiding harmful chemicals in production and finished products.</li>
+                        <li><strong>Animal Welfare:</strong> Cruelty-free practices and responsible sourcing of animal-derived materials.</li>
+                        <li><strong>Durability:</strong> Creating long-lasting products designed to be worn for years rather than seasons.</li>
+                    </ul>
+                    <p class="mt-4">Look for certifications like GOTS (Global Organic Textile Standard), Fair Trade Certified, B Corp, bluesign®, and OEKO-TEX® when shopping for sustainable fashion.</p>
+                </div>
+            </div>
+
+            <div class="mt-12 grid grid-cols-1 gap-8 sm:grid-cols-2 lg:grid-cols-3">
+                <!-- Carbon Neutral Brands -->
+                <div class="brand-card flex flex-col bg-white rounded-lg shadow-lg overflow-hidden">
+                    <div class="flex-1 bg-green-700 p-6">
+                        <h3 class="text-xl font-bold text-white">Carbon Neutral Brands</h3>
+                    </div>
+                    <div class="flex-1 p-6">
+                        <ul class="divide-y divide-gray-200">
+                            <li class="py-4">
+                                <div class="flex items-center space-x-4">
+                                    <div class="flex-1 min-w-0">
+                                        <p class="text-sm font-medium text-gray-900 truncate">Patagonia</p>
+                                        <p class="text-sm text-gray-500">Outdoor clothing and gear with strong environmental commitment</p>
+                                    </div>
+                                </div>
+                            </li>
+                            <li class="py-4">
+                                <div class="flex items-center space-x-4">
+                                    <div class="flex-1 min-w-0">
+                                        <p class="text-sm font-medium text-gray-900 truncate">Nisolo</p>
+                                        <p class="text-sm text-gray-500">Handcrafted shoes and accessories with carbon neutral operations</p>
+                                    </div>
+                                </div>
+                            </li>
+                            <li class="py-4">
+                                <div class="flex items-center space-x-4">
+                                    <div class="flex-1 min-w-0">
+                                        <p class="text-sm font-medium text-gray-900 truncate">MATE the Label</p>
+                                        <p class="text-sm text-gray-500">Clean essentials made from natural and organic materials</p>
+                                    </div>
+                                </div>
+                            </li>
+                            <li class="py-4">
+                                <div class="flex items-center space-x-4">
+                                    <div class="flex-1 min-w-0">
+                                        <p class="text-sm font-medium text-gray-900 truncate">Allbirds</p>
+                                        <p class="text-sm text-gray-500">Comfortable shoes made from natural materials with carbon offsets</p>
+                                    </div>
+                                </div>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+
+                <!-- Affordable Sustainable Brands -->
+                <div class="brand-card flex flex-col bg-white rounded-lg shadow-lg overflow-hidden">
+                    <div class="flex-1 bg-green-600 p-6">
+                        <h3 class="text-xl font-bold text-white">Affordable Sustainable Brands</h3>
+                    </div>
+                    <div class="flex-1 p-6">
+                        <ul class="divide-y divide-gray-200">
+                            <li class="py-4">
+                                <div class="flex items-center space-x-4">
+                                    <div class="flex-1 min-w-0">
+                                        <p class="text-sm font-medium text-gray-900 truncate">Pact</p>
+                                        <p class="text-sm text-gray-500">Fair trade organic cotton basics at accessible prices</p>
+                                    </div>
+                                </div>
+                            </li>
+                            <li class="py-4">
+                                <div class="flex items-center space-x-4">
+                                    <div class="flex-1 min-w-0">
+                                        <p class="text-sm font-medium text-gray-900 truncate">Kotn</p>
+                                        <p class="text-sm text-gray-500">Egyptian cotton essentials with transparent supply chain</p>
+                                    </div>
+                                </div>
+                            </li>
+                            <li class="py-4">
+                                <div class="flex items-center space-x-4">
+                                    <div class="flex-1 min-w-0">
+                                        <p class="text-sm font-medium text-gray-900 truncate">Quince</p>
+                                        <p class="text-sm text-gray-500">Factory-direct sustainable clothing at reduced prices</p>
+                                    </div>
+                                </div>
+                            </li>
+                            <li class="py-4">
+                                <div class="flex items-center space-x-4">
+                                    <div class="flex-1 min-w-0">
+                                        <p class="text-sm font-medium text-gray-900 truncate">Yes Friends</p>
+                                        <p class="text-sm text-gray-500">T-shirts and basics made ethically for affordable prices</p>
+                                    </div>
+                                </div>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+
+                <!-- Natural Fiber Brands -->
+                <div class="brand-card flex flex-col bg-white rounded-lg shadow-lg overflow-hidden">
+                    <div class="flex-1 bg-green-500 p-6">
+                        <h3 class="text-xl font-bold text-white">Natural Fiber Brands</h3>
+                    </div>
+                    <div class="flex-1 p-6">
+                        <ul class="divide-y divide-gray-200">
+                            <li class="py-4">
+                                <div class="flex items-center space-x-4">
+                                    <div class="flex-1 min-w-0">
+                                        <p class="text-sm font-medium text-gray-900 truncate">Jungmaven</p>
+                                        <p class="text-sm text-gray-500">Hemp clothing with minimal environmental impact</p>
+                                    </div>
+                                </div>
+                            </li>
+                            <li class="py-4">
+                                <div class="flex items-center space-x-4">
+                                    <div class="flex-1 min-w-0">
+                                        <p class="text-sm font-medium text-gray-900 truncate">MagicLinen</p>
+                                        <p class="text-sm text-gray-500">Sustainable linen clothing and homeware</p>
+                                    </div>
+                                </div>
+                            </li>
+                            <li class="py-4">
+                                <div class="flex items-center space-x-4">
+                                    <div class="flex-1 min-w-0">
+                                        <p class="text-sm font-medium text-gray-900 truncate">The Classic T-Shirt Company</p>
+                                        <p class="text-sm text-gray-500">Luxury tees made from GOTS-certified organic cotton</p>
+                                    </div>
+                                </div>
+                            </li>
+                            <li class="py-4">
+                                <div class="flex items-center space-x-4">
+                                    <div class="flex-1 min-w-0">
+                                        <p class="text-sm font-medium text-gray-900 truncate">Organic Basics</p>
+                                        <p class="text-sm text-gray-500">Essential underwear and basics in organic materials</p>
+                                    </div>
+                                </div>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+
+                <!-- Recycled Material Brands -->
+                <div class="brand-card flex flex-col bg-white rounded-lg shadow-lg overflow-hidden">
+                    <div class="flex-1 bg-green-700 p-6">
+                        <h3 class="text-xl font-bold text-white">Recycled Material Brands</h3>
+                    </div>
+                    <div class="flex-1 p-6">
+                        <ul class="divide-y divide-gray-200">
+                            <li class="py-4">
+                                <div class="flex items-center space-x-4">
+                                    <div class="flex-1 min-w-0">
+                                        <p class="text-sm font-medium text-gray-900 truncate">Girlfriend Collective</p>
+                                        <p class="text-sm text-gray-500">Activewear made from recycled plastic bottles</p>
+                                    </div>
+                                </div>
+                            </li>
+                            <li class="py-4">
+                                <div class="flex items-center space-x-4">
+                                    <div class="flex-1 min-w-0">
+                                        <p class="text-sm font-medium text-gray-900 truncate">Reformation</p>
+                                        <p class="text-sm text-gray-500">Trendy clothes from deadstock and recycled fabrics</p>
+                                    </div>
+                                </div>
+                            </li>
+                            <li class="py-4">
+                                <div class="flex items-center space-x-4">
+                                    <div class="flex-1 min-w-0">
+                                        <p class="text-sm font-medium text-gray-900 truncate">Wolven</p>
+                                        <p class="text-sm text-gray-500">Vibrant activewear made from recycled plastic bottles</p>
+                                    </div>
+                                </div>
+                            </li>
+                            <li class="py-4">
+                                <div class="flex items-center space-x-4">
+                                    <div class="flex-1 min-w-0">
+                                        <p class="text-sm font-medium text-gray-900 truncate">Outerknown</p>
+                                        <p class="text-sm text-gray-500">Surf-inspired clothing with recycled and regenerative materials</p>
+                                    </div>
+                                </div>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+
+                <!-- Fair Trade Brands -->
+                <div class="brand-card flex flex-col bg-white rounded-lg shadow-lg overflow-hidden">
+                    <div class="flex-1 bg-green-600 p-6">
+                        <h3 class="text-xl font-bold text-white">Fair Trade Brands</h3>
+                    </div>
+                    <div class="flex-1 p-6">
+                        <ul class="divide-y divide-gray-200">
+                            <li class="py-4">
+                                <div class="flex items-center space-x-4">
+                                    <div class="flex-1 min-w-0">
+                                        <p class="text-sm font-medium text-gray-900 truncate">ABLE</p>
+                                        <p class="text-sm text-gray-500">Empowering women through ethical fashion and fair wages</p>
+                                    </div>
+                                </div>
+                            </li>
+                            <li class="py-4">
+                                <div class="flex items-center space-x-4">
+                                    <div class="flex-1 min-w-0">
+                                        <p class="text-sm font-medium text-gray-900 truncate">Fair Trade Winds</p>
+                                        <p class="text-sm text-gray-500">Collection of fair trade fashion brands and accessories</p>
+                                    </div>
+                                </div>
+                            </li>
+                            <li class="py-4">
+                                <div class="flex items-center space-x-4">
+                                    <div class="flex-1 min-w-0">
+                                        <p class="text-sm font-medium text-gray-900 truncate">Mata Traders</p>
+                                        <p class="text-sm text-gray-500">Fair trade apparel made by artisan cooperatives</p>
+                                    </div>
+                                </div>
+                            </li>
+                            <li class="py-4">
+                                <div class="flex items-center space-x-4">
+                                    <div class="flex-1 min-w-0">
+                                        <p class="text-sm font-medium text-gray-900 truncate">Eileen Fisher</p>
+                                        <p class="text-sm text-gray-500">Minimalist designs with fair trade collections</p>
+                                    </div>
+                                </div>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+
+                <!-- Secondhand & Vintage -->
+                <div class="brand-card flex flex-col bg-white rounded-lg shadow-lg overflow-hidden">
+                    <div class="flex-1 bg-green-500 p-6">
+                        <h3 class="text-xl font-bold text-white">Secondhand & Vintage</h3>
+                    </div>
+                    <div class="flex-1 p-6">
+                        <ul class="divide-y divide-gray-200">
+                            <li class="py-4">
+                                <div class="flex items-center space-x-4">
+                                    <div class="flex-1 min-w-0">
+                                        <p class="text-sm font-medium text-gray-900 truncate">ThredUP</p>
+                                        <p class="text-sm text-gray-500">Online consignment and thrift store</p>
+                                    </div>
+                                </div>
+                            </li>
+                            <li class="py-4">
+                                <div class="flex items-center space-x-4">
+                                    <div class="flex-1 min-w-0">
+                                        <p class="text-sm font-medium text-gray-900 truncate">Depop</p>
+                                        <p class="text-sm text-gray-500">Peer-to-peer marketplace for unique secondhand finds</p>
+                                    </div>
+                                </div>
+                            </li>
+                            <li class="py-4">
+                                <div class="flex items-center space-x-4">
+                                    <div class="flex-1 min-w-0">
+                                        <p class="text-sm font-medium text-gray-900 truncate">Rent the Runway</p>
+                                        <p class="text-sm text-gray-500">Designer clothing rental service</p>
+                                    </div>
+                                </div>
+                            </li>
+                            <li class="py-4">
+                                <div class="flex items-center space-x-4">
+                                    <div class="flex-1 min-w-0">
+                                        <p class="text-sm font-medium text-gray-900 truncate">Beyond Retro</p>
+                                        <p class="text-sm text-gray-500">Vintage clothing with curated collections</p>
+                                    </div>
+                                </div>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- NEW SECTION: Recycling Rates by Brand -->
+    <div id="recycling-rates" class="bg-gray-50 py-16">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center">
+                <h2 class="text-base text-green-600 font-semibold tracking-wide uppercase">Transparency Metrics</h2>
+                <p class="mt-2 text-3xl leading-8 font-extrabold tracking-tight text-gray-900 sm:text-4xl">
+                    Recycling Rates by Fashion Brands
+                </p>
+                <p class="mt-4 max-w-2xl text-xl text-gray-500 mx-auto">
+                    See how major brands compare in their efforts to recycle textiles and close the fashion loop.
+                </p>
+            </div>
+
+            <div class="mt-12 bg-white p-8 rounded-lg shadow-md">
+                <h3 class="text-2xl font-bold text-gray-900 mb-6">The State of Fashion Recycling</h3>
+                <div class="prose max-w-none text-gray-700 mb-8">
+                    <p>The fashion industry faces a significant recycling challenge. According to the EPA, the recycling rate for all textiles was just 14.7% in 2018, with only 2.5 million tons recycled out of the total textile waste generated. For clothing and footwear specifically, the recycling rate drops to approximately 13%.</p>
+                    <p class="mt-4">Even more concerning, studies show that less than 1% of material used to produce clothing is recycled into new clothing. The vast majority of "recycled" textiles are actually downcycled into products of lesser value, such as insulation or cleaning materials, or shipped overseas where they may still end up in landfills.</p>
+                    <p class="mt-4">Some brands are working to change this by implementing innovative recycling programs and using recycled materials in their new products. Below, we compare the recycling rates and initiatives of major fashion brands to help consumers make more informed choices.</p>
+                </div>
+
+                <h4 class="text-xl font-bold text-gray-900 mb-4">Recycling Rates by Brand</h4>
+                <div class="chart-container">
+                    <canvas id="recyclingRatesChart"></canvas>
+                </div>
+                <p class="text-sm text-gray-500 mt-2 mb-6 text-center">Data sources: Brand sustainability reports, Fashion Revolution's Transparency Index, and Ellen MacArthur Foundation.</p>
+
+                <div class="mt-8 grid grid-cols-1 md:grid-cols-2 gap-8">
+                    <div class="recycling-initiative-card bg-white p-6 rounded-lg shadow-md">
+                        <h4 class="text-lg font-bold text-gray-900 mb-3">Leaders in Textile Recycling</h4>
+                        <div class="prose max-w-none text-gray-700">
+                            <p><strong>Patagonia</strong> stands out with its Worn Wear program, which has repaired over 100,000 garments since 2015. The company has also invested in recycling technologies and uses recycled materials in 68% of its product line.</p>
+                            <p class="mt-3"><strong>Reformation</strong> partners with recycling technology companies to ensure their take-back program effectively recycles materials. Their RefRecycling program keeps clothes in circulation or recycles them into new materials.</p>
+                            <p class="mt-3"><strong>Levi Strauss</strong> has significantly increased its use of recycled denim through the Blue Jeans Go Green initiative, diverting over 2,100 tons of denim from landfills and incorporating post-consumer cotton into new products.</p>
+                        </div>
+                    </div>
+
+                    <div class="recycling-initiative-card bg-white p-6 rounded-lg shadow-md">
+                        <h4 class="text-lg font-bold text-gray-900 mb-3">Innovative Recycling Technologies</h4>
+                        <div class="prose max-w-none text-gray-700">
+                            <p><strong>Chemical Recycling:</strong> Companies like Circ are developing processes to separate polyester and cotton blends, allowing previously "unrecyclable" mixed fabrics to be recycled into virgin-quality materials.</p>
+                            <p class="mt-3"><strong>Mechanical Recycling Advancements:</strong> Improved mechanical recycling methods are enabling higher quality recycled fibers that maintain strength and durability without significant degradation.</p>
+                            <p class="mt-3"><strong>Blockchain Tracking:</strong> Some progressive brands now use blockchain technology to track the entire lifecycle of garments, ensuring transparency in recycling claims and improving the efficiency of take-back programs.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="mt-8">
+                    <h4 class="text-xl font-bold text-gray-900 mb-4">Textile Recycling: Reality vs. Perception</h4>
+                    <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+                        <div>
+                            <div class="mb-6">
+                                <h5 class="text-lg font-semibold text-gray-900 mb-2">Global Textile Waste</h5>
+                                <div class="progress-container">
+                                    <div class="progress-bar" style="width: 85%"></div>
+                                </div>
+                                <p class="text-sm text-gray-600">85% of all textiles end up in landfills globally</p>
+                            </div>
+                            
+                            <div class="mb-6">
+                                <h5 class="text-lg font-semibold text-gray-900 mb-2">Textile-to-Textile Recycling</h5>
+                                <div class="progress-container">
+                                    <div class="progress-bar" style="width: 1%"></div>
+                                </div>
+                                <p class="text-sm text-gray-600">Only 1% of textiles are recycled into new clothing</p>
+                            </div>
+                            
+                            <div class="mb-6">
+                                <h5 class="text-lg font-semibold text-gray-900 mb-2">U.S. Textile Recycling Rate</h5>
+                                <div class="progress-container">
+                                    <div class="progress-bar" style="width: 14.7%"></div>
+                                </div>
+                                <p class="text-sm text-gray-600">14.7% overall textile recycling rate in the U.S.</p>
+                            </div>
+                        </div>
+
+                        <div class="prose max-w-none text-gray-700">
+                            <p>Despite the growing number of clothing recycling programs, the fashion industry still has a significant recycling gap. Consumers often believe that donating or recycling clothing guarantees it will be reused or made into new clothing, but the reality is more complex:</p>
+                            <ul class="mt-2">
+                                <li>Most donated clothing is first sorted for resale, but only about 10-20% of donated items actually get sold in thrift stores.</li>
+                                <li>A large portion of unsold donated textiles is shipped overseas, where it can disrupt local textile economies.</li>
+                                <li>Many garments contain blended fibers or components (like zippers and buttons) that make them difficult to recycle effectively.</li>
+                                <li>Most "recycled" clothing is downcycled, not truly recycled into new clothing of comparable quality.</li>
+                            </ul>
+                            <p class="mt-3">The gap between perception and reality highlights the need for more transparent communication about what happens to our clothes after disposal and significant investment in advanced recycling technologies.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="mt-12 bg-white p-8 rounded-lg shadow-md">
+                <h3 class="text-2xl font-bold text-gray-900 mb-6">Notable Brand Recycling Initiatives</h3>
+                
+                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                    <div class="recycling-initiative-card bg-white p-6 rounded-lg shadow-md">
+                        <h4 class="text-lg font-bold text-gray-900 mb-3">Patagonia Worn Wear</h4>
+                        <div class="prose max-w-none text-gray-700">
+                            <p>Patagonia's pioneering Worn Wear program repairs, resells, and recycles Patagonia gear, extending product lifespans and reducing waste. Customers can trade in used Patagonia items for store credit, and the company repairs over 40,000 items annually.</p>
+                            <p class="mt-2"><strong>Key Achievement:</strong> Saved over 6 tons of clothing from landfills through repairs and 71 tons through recycling in 2023 alone.</p>
+                        </div>
+                    </div>
+                    
+                    <div class="recycling-initiative-card bg-white p-6 rounded-lg shadow-md">
+                        <h4 class="text-lg font-bold text-gray-900 mb-3">H&M Garment Collecting</h4>
+                        <div class="prose max-w-none text-gray-700">
+                            <p>H&M's Garment Collecting program accepts clothing of any brand and in any condition. Items are sorted for reuse, repurposing, or recycling, with the goal of creating a closed loop for textile fibers.</p>
+                            <p class="mt-2"><strong>Key Achievement:</strong> Collected over 100,000 tonnes of textiles through their in-store collection program since its launch.</p>
+                        </div>
+                    </div>
+                    
+                    <div class="recycling-initiative-card bg-white p-6 rounded-lg shadow-md">
+                        <h4 class="text-lg font-bold text-gray-900 mb-3">The North Face Clothes The Loop</h4>
+                        <div class="prose max-w-none text-gray-700">
+                            <p>The North Face accepts used clothing and footwear of any brand for recycling. Collected items are either repurposed, downcycled, or upcycled into new products through their partnership with textile recycling companies.</p>
+                            <p class="mt-2"><strong>Key Achievement:</strong> Diverted over 95,000 pounds of textiles from landfills since the program's inception.</p>
+                        </div>
+                    </div>
+                    
+                    <div class="recycling-initiative-card bg-white p-6 rounded-lg shadow-md">
+                        <h4 class="text-lg font-bold text-gray-900 mb-3">Eileen Fisher Renew</h4>
+                        <div class="prose max-w-none text-gray-700">
+                            <p>Eileen Fisher's take-back program pioneered circular fashion in 2009. Customers receive store credit for returned items, which are cleaned and resold if possible, or transformed into art pieces or new garments if damaged.</p>
+                            <p class="mt-2"><strong>Key Achievement:</strong> Collected and processed over 1.9 million garments since 2009, demonstrating long-term commitment to circular fashion.</p>
+                        </div>
+                    </div>
+                    
+                    <div class="recycling-initiative-card bg-white p-6 rounded-lg shadow-md">
+                        <h4 class="text-lg font-bold text-gray-900 mb-3">For Days Take Back Bag</h4>
+                        <div class="prose max-w-none text-gray-700">
+                            <p>For Days accepts clothing from any brand for recycling through their Take Back Bag program. Customers receive credit toward new purchases, and all collected items are sorted into over 1,000 categories to be properly recycled or upcycled.</p>
+                            <p class="mt-2"><strong>Key Achievement:</strong> Developed a unique closed-loop system where their own products are designed for complete recyclability at end-of-life.</p>
+                        </div>
+                    </div>
+                    
+                    <div class="recycling-initiative-card bg-white p-6 rounded-lg shadow-md">
+                        <h4 class="text-lg font-bold text-gray-900 mb-3">Levi's SecondHand</h4>
+                        <div class="prose max-w-none text-gray-700">
+                            <p>Levi's buys back their own used jeans and jackets, professionally cleans them, and resells them on their SecondHand marketplace. They also partner with the Blue Jeans Go Green program to recycle denim into housing insulation.</p>
+                            <p class="mt-2"><strong>Key Achievement:</strong> Each pair of jeans recycled through their program saves approximately 1,500 liters of water compared to producing new jeans.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="mt-10">
+                    <h4 class="text-xl font-bold text-gray-900 mb-4">How Consumers Can Drive Change</h4>
+                    <div class="prose max-w-none text-gray-700">
+                        <p>Individual actions can collectively drive the fashion industry toward more sustainable and circular practices:</p>
+                        <ul class="grid grid-cols-1 md:grid-cols-2 gap-4 mt-4">
+                            <li><strong>Buy less, choose better:</strong> Invest in higher quality pieces that last longer and have a lower environmental impact over their lifetime.</li>
+                            <li><strong>Research before buying:</strong> Look up brands' sustainability credentials and recycling initiatives before making purchases.</li>
+                            <li><strong>Support brands with take-back programs:</strong> Prioritize companies that accept their products back for recycling or resale.</li>
+                            <li><strong>Maintain and repair:</strong> Learn basic clothing repair skills to extend the life of your garments.</li>
+                            <li><strong>Ask questions:</strong> Inquire about brands' recycling practices and push for more transparency.</li>
+                            <li><strong>Participate in recycling programs:</strong> Make use of available take-back and recycling options instead of throwing clothes away.</li>
+                            <li><strong>Share knowledge:</strong> Educate friends and family about textile waste and recycling options.</li>
+                            <li><strong>Advocate for policy change:</strong> Support legislation requiring producer responsibility for textile waste.</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Industry Reports Section -->
+    <div class="bg-gray-50 py-16">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center">
+                <h2 class="text-base text-green-600 font-semibold tracking-wide uppercase">Industry Insight</h2>
+                <p class="mt-2 text-3xl leading-8 font-extrabold tracking-tight text-gray-900 sm:text-4xl">
+                    Weekly Fashion Industry Reports
+                </p>
+                <p class="mt-4 max-w-2xl text-xl text-gray-500 mx-auto">
+                    Stay informed about the latest sustainability initiatives from major fashion brands.
+                </p>
+            </div>
+
+            <div class="mt-12 bg-white rounded-lg shadow-lg overflow-hidden">
+                <div class="p-6">
+                    <h3 class="text-2xl font-bold text-gray-900 mb-6">Latest Industry Updates</h3>
+                    <div class="timeline">
+                        <div class="timeline-item">
+                            <h4 class="text-xl font-bold text-gray-800">H&M Group Launches Circularity Initiative</h4>
+                            <p class="text-sm text-gray-500 mt-1">April 12, 2025</p>
+                            <div class="mt-2 text-gray-700">
+                                <p>H&M Group announced a new circularity initiative aimed at recycling 100% of collected garments by 2030. The program will expand their existing garment collection scheme and invest in new recycling technologies.</p>
+                                <p class="mt-2 text-sm text-gray-600">Impact Analysis: While this represents progress, critics note that the company's continuing fast fashion business model still contributes significantly to overconsumption and waste.</p>
+                            </div>
+                        </div>
+                        <div class="timeline-item">
+                            <h4 class="text-xl font-bold text-gray-800">Luxury Brands Commit to Eliminating PFAS</h4>
+                            <p class="text-sm text-gray-500 mt-1">April 5, 2025</p>
+                            <div class="mt-2 text-gray-700">
+                                <p>A coalition of luxury fashion houses has pledged to eliminate all per- and polyfluoroalkyl substances (PFAS) from their products by 2026. These "forever chemicals" have been linked to health concerns and environmental contamination.</p>
+                                <p class="mt-2 text-sm text-gray-600">Impact Analysis: This move sets an important precedent for the industry, though implementation timelines could be more ambitious.</p>
+                            </div>
+                        </div>
+                        <div class="timeline-item">
+                            <h4 class="text-xl font-bold text-gray-800">Transparency Report Ranks Major Brands</h4>
+                            <p class="text-sm text-gray-500 mt-1">March 28, 2025</p>
+                            <div class="mt-2 text-gray-700">
+                                <p>Fashion Revolution's annual Transparency Index has been released, ranking 250 of the world's largest fashion brands based on their disclosure of social and environmental policies, practices, and impacts.</p>
+                                <p class="mt-2 text-sm text-gray-600">Impact Analysis: Overall industry transparency has improved 12% since last year, though many brands still disclose minimal information about their supply chains.</p>
+                            </div>
+                        </div>
+                        <div class="timeline-item">
+                            <h4 class="text-xl font-bold text-gray-800">EU's New Textile Strategy Enters Force</h4>
+                            <p class="text-sm text-gray-500 mt-1">March 21, 2025</p>
+                            <div class="mt-2 text-gray-700">
+                                <p>The European Union's comprehensive textile strategy has entered into force, requiring brands to meet strict eco-design requirements, end the destruction of unsold products, and provide digital product passports.</p>
+                                <p class="mt-2 text-sm text-gray-600">Impact Analysis: This regulation represents the most ambitious government action to date on fashion sustainability and will likely influence global standards.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="mt-12 bg-white rounded-lg shadow-lg overflow-hidden">
+                <div class="p-6">
+                    <h3 class="text-2xl font-bold text-gray-900 mb-6">Sustainability Rankings</h3>
+                    <div class="overflow-hidden">
+                        <table class="min-w-full divide-y divide-gray-200">
+                            <thead class="bg-gray-50">
+                                <tr>
+                                    <th scope="col" class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">
+                                        Brand
+                                    </th>
+                                    <th scope="col" class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">
+                                        Overall Score
+                                    </th>
+                                    <th scope="col" class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">
+                                        Environmental Impact
+                                    </th>
+                                    <th scope="col" class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">
+                                        Labor Practices
+                                    </th>
+                                    <th scope="col" class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">
+                                        Transparency
+                                    </th>
+                                </tr>
+                            </thead>
+                            <tbody class="bg-white divide-y divide-gray-200">
+                                <tr>
+                                    <td class="px-6 py-4 whitespace-nowrap">
+                                        <div class="text-sm font-medium text-gray-900">Patagonia</div>
+                                    </td>
+                                    <td class="px-6 py-4 whitespace-nowrap">
+                                        <div class="text-sm text-gray-900">A+</div>
+                                    </td>
+                                    <td class="px-6 py-4 whitespace-nowrap">
+                                        <div class="text-sm text-gray-900">A+</div>
+                                    </td>
+                                    <td class="px-6 py-4 whitespace-nowrap">
+                                        <div class="text-sm text-gray-900">A</div>
+                                    </td>
+                                    <td class="px-6 py-4 whitespace-nowrap">
+                                        <div class="text-sm text-gray-900">A+</div>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td class="px-6 py-4 whitespace-nowrap">
+                                        <div class="text-sm font-medium text-gray-900">Eileen Fisher</div>
+                                    </td>
+                                    <td class="px-6 py-4 whitespace-nowrap">
+                                        <div class="text-sm text-gray-900">A</div>
+                                    </td>
+                                    <td class="px-6 py-4 whitespace-nowrap">
+                                        <div class="text-sm text-gray-900">A</div>
+                                    </td>
+                                    <td class="px-6 py-4 whitespace-nowrap">
+                                        <div class="text-sm text-gray-900">A</div>
+                                    </td>
+                                    <td class="px-6 py-4 whitespace-nowrap">
+                                        <div class="text-sm text-gray-900">A-</div>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td class="px-6 py-4 whitespace-nowrap">
+                                        <div class="text-sm font-medium text-gray-900">Stella McCartney</div>
+                                    </td>
+                                    <td class="px-6 py-4 whitespace-nowrap">
+                                        <div class="text-sm text-gray-900">A-</div>
+                                    </td>
+                                    <td class="px-6 py-4 whitespace-nowrap">
+                                        <div class="text-sm text-gray-900">A</div>
+                                    </td>
+                                    <td class="px-6 py-4 whitespace-nowrap">
+                                        <div class="text-sm text-gray-900">B+</div>
+                                    </td>
+                                    <td class="px-6 py-4 whitespace-nowrap">
+                                        <div class="text-sm text-gray-900">A-</div>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td class="px-6 py-4 whitespace-nowrap">
+                                        <div class="text-sm font-medium text-gray-900">H&M</div>
+                                    </td>
+                                    <td class="px-6 py-4 whitespace-nowrap">
+                                        <div class="text-sm text-gray-900">C+</div>
+                                    </td>
+                                    <td class="px-6 py-4 whitespace-nowrap">
+                                        <div class="text-sm text-gray-900">C</div>
+                                    </td>
+                                    <td class="px-6 py-4 whitespace-nowrap">
+                                        <div class="text-sm text-gray-900">B-</div>
+                                    </td>
+                                    <td class="px-6 py-4 whitespace-nowrap">
+                                        <div class="text-sm text-gray-900">B+</div>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td class="px-6 py-4 whitespace-nowrap">
+                                        <div class="text-sm font-medium text-gray-900">Zara (Inditex)</div>
+                                    </td>
+                                    <td class="px-6 py-4 whitespace-nowrap">
+                                        <div class="text-sm text-gray-900">C</div>
+                                    </td>
+                                    <td class="px-6 py-4 whitespace-nowrap">
+                                        <div class="text-sm text-gray-900">C-</div>
+                                    </td>
+                                    <td class="px-6 py-4 whitespace-nowrap">
+                                        <div class="text-sm text-gray-900">C+</div>
+                                    </td>
+                                    <td class="px-6 py-4 whitespace-nowrap">
+                                        <div class="text-sm text-gray-900">B-</div>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td class="px-6 py-4 whitespace-nowrap">
+                                        <div class="text-sm font-medium text-gray-900">Shein</div>
+                                    </td>
+                                    <td class="px-6 py-4 whitespace-nowrap">
+                                        <div class="text-sm text-gray-900">F</div>
+                                    </td>
+                                    <td class="px-6 py-4 whitespace-nowrap">
+                                        <div class="text-sm text-gray-900">F</div>
+                                    </td>
+                                    <td class="px-6 py-4 whitespace-nowrap">
+                                        <div class="text-sm text-gray-900">F</div>
+                                    </td>
+                                    <td class="px-6 py-4 whitespace-nowrap">
+                                        <div class="text-sm text-gray-900">F</div>
+                                    </td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                    <p class="mt-4 text-sm text-gray-500">
+                        Rankings compiled from public data, third-party certifications, and transparency reports. Updated quarterly.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Clothing Exchange & Donation Section -->
+    <div id="exchange" class="bg-white py-16">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center">
+                <h2 class="text-base text-green-600 font-semibold tracking-wide uppercase">Take Action</h2>
+                <p class="mt-2 text-3xl leading-8 font-extrabold tracking-tight text-gray-900 sm:text-4xl">
+                    Clothing Exchange & Donation
+                </p>
+                <p class="mt-4 max-w-2xl text-xl text-gray-500 mx-auto">
+                    Give your clothes a second life and help reduce textile waste through our exchange and donation programs.
+                </p>
+            </div>
+
+            <div class="mt-16">
+                <!-- Clothing Exchange Platform -->
+                <div class="bg-green-50 p-6 rounded-lg shadow-md mb-12">
+                    <h3 class="text-2xl font-bold text-gray-900 mb-6">Clothing Exchange Platform</h3>
+                    <p class="text-gray-700 mb-8">Our exchange platform allows you to swap your gently used clothing with other community members, extending the life of garments and reducing the need for new purchases.</p>
+                    
+                    <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+                        <div class="exchange-step bg-white p-6 rounded-lg shadow-sm text-center">
+                            <div class="w-12 h-12 bg-green-100 text-green-600 rounded-full flex items-center justify-center text-xl font-bold mx-auto mb-4">1</div>
+                            <h4 class="text-lg font-semibold mb-2">Register & Create Profile</h4>
+                            <p class="text-gray-600">Sign up to create your account and build your profile. Complete verification to join our trusted community.</p>
+                        </div>
+                        <div class="exchange-step bg-white p-6 rounded-lg shadow-sm text-center">
+                            <div class="w-12 h-12 bg-green-100 text-green-600 rounded-full flex items-center justify-center text-xl font-bold mx-auto mb-4">2</div>
+                            <h4 class="text-lg font-semibold mb-2">Upload Your Items</h4>
+                            <p class="text-gray-600">Photograph and list your clothing with detailed descriptions including size, condition, and brand.</p>
+                        </div>
+                        <div class="exchange-step bg-white p-6 rounded-lg shadow-sm text-center">
+                            <div class="w-12 h-12 bg-green-100 text-green-600 rounded-full flex items-center justify-center text-xl font-bold mx-auto mb-4">3</div>
+                            <h4 class="text-lg font-semibold mb-2">Browse & Exchange</h4>
+                            <p class="text-gray-600">Search for items you want, coordinate exchanges with other members, and arrange meetups or shipping.</p>
+                        </div>
+                    </div>
+
+                    <div class="mt-10 bg-white p-6 rounded-lg shadow-sm">
+                        <h4 class="text-xl font-semibold mb-4">Exchange Guidelines</h4>
+                        <ul class="list-disc pl-5 text-gray-700 space-y-2">
+                            <li>All clothing must be clean, gently used, and free from stains, tears, or odors.</li>
+                            <li>Be honest about the condition of your items and provide clear photos.</li>
+                            <li>Respond promptly to exchange requests and messages.</li>
+                            <li>Rate your exchange experience to help build community trust.</li>
+                            <li>Follow safety guidelines for in-person exchanges or use recommended shipping methods.</li>
+                            <li>Report any concerns or issues to our moderation team.</li>
+                        </ul>
+                    </div>
+
+                    <div class="mt-8 text-center">
+                        <button class="bg-green-600 text-white py-3 px-6 rounded-md shadow-sm hover:bg-green-700 focus:outline-none focus:ring-2 focus:ring-green-500 focus:ring-opacity-50">
+                            Join Our Exchange Community
+                        </button>
+                    </div>
+                </div>
+
+                <!-- Donation Program -->
+                <div class="bg-green-50 p-6 rounded-lg shadow-md">
+                    <h3 class="text-2xl font-bold text-gray-900 mb-6">Clothing Donation Program</h3>
+                    <p class="text-gray-700 mb-8">Your donated clothes can make a real difference in someone's life while keeping textiles out of landfills. Our donation program ensures your unwanted clothing goes to those who need it most.</p>
+                    
+                    <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+                        <div class="bg-white p-6 rounded-lg shadow-sm">
+                            <h4 class="text-xl font-semibold mb-4">How to Donate</h4>
+                            <div class="space-y-4">
+                                <div class="flex items-start">
+                                    <div class="flex-shrink-0 w-8 h-8 bg-green-100 text-green-600 rounded-full flex items-center justify-center text-sm font-bold mr-3">1</div>
+                                    <div>
+                                        <h5 class="font-medium text-gray-900">Register as a Donor</h5>
+                                        <p class="text-gray-600">Create your donor profile so we can recognize your contribution.</p>
+                                    </div>
+                                </div>
+                                <div class="flex items-start">
+                                    <div class="flex-shrink-0 w-8 h-8 bg-green-100 text-green-600 rounded-full flex items-center justify-center text-sm font-bold mr-3">2</div>
+                                    <div>
+                                        <h5 class="font-medium text-gray-900">Schedule a Pickup</h5>
+                                        <p class="text-gray-600">Choose a convenient date and time for us to collect your donations.</p>
+                                    </div>
+                                </div>
+                                <div class="flex items-start">
+                                    <div class="flex-shrink-0 w-8 h-8 bg-green-100 text-green-600 rounded-full flex items-center justify-center text-sm font-bold mr-3">3</div>
+                                    <div>
+                                        <h5 class="font-medium text-gray-900">Prepare Your Items</h5>
+                                        <p class="text-gray-600">Clean and sort your clothing, and pack them in bags or boxes.</p>
+                                    </div>
+                                </div>
+                                <div class="flex items-start">
+                                    <div class="flex-shrink-0 w-8 h-8 bg-green-100 text-green-600 rounded-full flex items-center justify-center text-sm font-bold mr-3">4</div>
+                                    <div>
+                                        <h5 class="font-medium text-gray-900">Donation Pickup</h5>
+                                        <p class="text-gray-600">Our volunteer will arrive during your scheduled time slot to collect your donation.</p>
+                                    </div>
+                                </div>
+                                <div class="flex items-start">
+                                    <div class="flex-shrink-0 w-8 h-8 bg-green-100 text-green-600 rounded-full flex items-center justify-center text-sm font-bold mr-3">5</div>
+                                    <div>
+                                        <h5 class="font-medium text-gray-900">Receive Recognition</h5>
+                                        <p class="text-gray-600">Your photo and story will be featured on our Honor Wall (with your permission).</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="bg-white p-6 rounded-lg shadow-sm">
+                            <h4 class="text-xl font-semibold mb-4">Where Your Donations Go</h4>
+                            <p class="text-gray-700 mb-4">Your donated clothing is distributed to those in need through our network of community partners:</p>
+                            <ul class="list-disc pl-5 text-gray-700 space-y-2 mb-6">
+                                <li><strong>Local Shelters:</strong> Providing clothing to homeless individuals and families</li>
+                                <li><strong>Transitional Housing Programs:</strong> Supporting those moving from homelessness to stable housing</li>
+                                <li><strong>Job Training Programs:</strong> Offering professional clothing for interviews and new jobs</li>
+                                <li><strong>Disaster Relief:</strong> Providing clothing to those affected by natural disasters</li>
+                                <li><strong>Global Initiatives:</strong> Sending quality clothing to communities in need worldwide</li>
+                            </ul>
+                            <p class="text-gray-700">Items that cannot be donated directly are recycled into new materials, ensuring zero waste.</p>
+                        </div>
+                    </div>
+
+                    <div class="mt-8 text-center">
+                        <button class="bg-green-600 text-white py-3 px-6 rounded-md shadow-sm hover:bg-green-700 focus:outline-none focus:ring-2 focus:ring-green-500 focus:ring-opacity-50">
+                            Schedule a Donation Pickup
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Donor Honor Wall -->
+    <div class="bg-gray-50 py-16">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center">
+                <h2 class="text-base text-green-600 font-semibold tracking-wide uppercase">Community Heroes</h2>
+                <p class="mt-2 text-3xl leading-8 font-extrabold tracking-tight text-gray-900 sm:text-4xl">
+                    Donor Honor Wall
+                </p>
+                <p class="mt-4 max-w-2xl text-xl text-gray-500 mx-auto">
+                    Celebrating those who are making a difference through their generous clothing donations.
+                </p>
+            </div>
+
+            <div class="mt-12 grid grid-cols-1 gap-8 sm:grid-cols-2 lg:grid-cols-3">
+                <div class="donor-card bg-white rounded-lg shadow-lg overflow-hidden">
+                    <div class="p-6">
+                        <div class="flex items-center">
+                            <div class="flex-shrink-0 h-12 w-12 rounded-full bg-green-100 flex items-center justify-center">
+                                <i class="fas fa-user text-green-600 text-xl"></i>
+                            </div>
+                            <div class="ml-4">
+                                <h3 class="text-lg font-medium text-gray-900">Sarah Johnson</h3>
+                                <p class="text-sm text-gray-500">April 16, 2025</p>
+                            </div>
+                        </div>
+                        <div class="mt-4">
+                            <p class="text-gray-600">"After learning about the environmental impact of fast fashion, I decided to donate my unused clothes instead of throwing them away. It feels good knowing my clothes will have a second life!"</p>
+                            <p class="mt-2 text-sm text-gray-500">Donated 35 items of clothing</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="donor-card bg-white rounded-lg shadow-lg overflow-hidden">
+                    <div class="p-6">
+                        <div class="flex items-center">
+                            <div class="flex-shrink-0 h-12 w-12 rounded-full bg-green-100 flex items-center justify-center">
+                                <i class="fas fa-user text-green-600 text-xl"></i>
+                            </div>
+                            <div class="ml-4">
+                                <h3 class="text-lg font-medium text-gray-900">Michael Chen</h3>
+                                <p class="text-sm text-gray-500">April 14, 2025</p>
+                            </div>
+                        </div>
+                        <div class="mt-4">
+                            <p class="text-gray-600">"I organized a clothing drive at my office after learning about the textile waste problem. Together, we collected over 200 items! It was a great team-building experience with a positive impact."</p>
+                            <p class="mt-2 text-sm text-gray-500">Donated 210 items of clothing</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="donor-card bg-white rounded-lg shadow-lg overflow-hidden">
+                    <div class="p-6">
+                        <div class="flex items-center">
+                            <div class="flex-shrink-0 h-12 w-12 rounded-full bg-green-100 flex items-center justify-center">
+                                <i class="fas fa-user text-green-600 text-xl"></i>
+                            </div>
+                            <div class="ml-4">
+                                <h3 class="text-lg font-medium text-gray-900">Emily Rodriguez</h3>
+                                <p class="text-sm text-gray-500">April 10, 2025</p>
+                            </div>
+                        </div>
+                        <div class="mt-4">
+                            <p class="text-gray-600">"As a fashion design student, I've become increasingly aware of the industry's impact. Donating my excess clothing is a small step toward being part of the solution rather than the problem."</p>
+                            <p class="mt-2 text-sm text-gray-500">Donated 42 items of clothing</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="donor-card bg-white rounded-lg shadow-lg overflow-hidden">
+                    <div class="p-6">
+                        <div class="flex items-center">
+                            <div class="flex-shrink-0 h-12 w-12 rounded-full bg-green-100 flex items-center justify-center">
+                                <i class="fas fa-user text-green-600 text-xl"></i>
+                            </div>
+                            <div class="ml-4">
+                                <h3 class="text-lg font-medium text-gray-900">David Wilson</h3>
+                                <p class="text-sm text-gray-500">April 8, 2025</p>
+                            </div>
+                        </div>
+                        <div class="mt-4">
+                            <p class="text-gray-600">"I lost 50 pounds and had a whole wardrobe that no longer fit. Instead of buying all new clothes, I've been exchanging items and donating what I can't use. It's saved me money and helped others!"</p>
+                            <p class="mt-2 text-sm text-gray-500">Donated 28 items of clothing</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="donor-card bg-white rounded-lg shadow-lg overflow-hidden">
+                    <div class="p-6">
+                        <div class="flex items-center">
+                            <div class="flex-shrink-0 h-12 w-12 rounded-full bg-green-100 flex items-center justify-center">
+                                <i class="fas fa-user text-green-600 text-xl"></i>
+                            </div>
+                            <div class="ml-4">
+                                <h3 class="text-lg font-medium text-gray-900">Olivia Thompson</h3>
+                                <p class="text-sm text-gray-500">April 5, 2025</p>
+                            </div>
+                        </div>
+                        <div class="mt-4">
+                            <p class="text-gray-600">"My children outgrow their clothes so quickly! I'm happy to have found a platform where these barely-worn items can find new homes instead of ending up in landfills."</p>
+                            <p class="mt-2 text-sm text-gray-500">Donated 53 items of children's clothing</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="donor-card bg-white rounded-lg shadow-lg overflow-hidden">
+                    <div class="p-6">
+                        <div class="flex items-center">
+                            <div class="flex-shrink-0 h-12 w-12 rounded-full bg-green-100 flex items-center justify-center">
+                                <i class="fas fa-user text-green-600 text-xl"></i>
+                            </div>
+                            <div class="ml-4">
+                                <h3 class="text-lg font-medium text-gray-900">James Parker</h3>
+                                <p class="text-sm text-gray-500">April 2, 2025</p>
+                            </div>
+                        </div>
+                        <div class="mt-4">
+                            <p class="text-gray-600">"After watching a documentary about fast fashion, I committed to buying less and donating more. This platform makes it easy to ensure my unwanted items find a good home."</p>
+                            <p class="mt-2 text-sm text-gray-500">Donated 31 items of clothing</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="mt-10 text-center">
+                <a href="#exchange" class="inline-flex items-center px-6 py-3 border border-transparent text-base font-medium rounded-md shadow-sm text-white bg-green-600 hover:bg-green-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-green-500">
+                    Join Our Donor Community
+                </a>
+            </div>
+        </div>
+    </div>
+
+    <!-- Resources and Education -->
+    <div class="bg-white py-16">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center">
+                <h2 class="text-base text-green-600 font-semibold tracking-wide uppercase">Learn More</h2>
+                <p class="mt-2 text-3xl leading-8 font-extrabold tracking-tight text-gray-900 sm:text-4xl">
+                    Resources and Education
+                </p>
+                <p class="mt-4 max-w-2xl text-xl text-gray-500 mx-auto">
+                    Empower yourself with knowledge and skills to build a more sustainable wardrobe.
+                </p>
+            </div>
+
+            <div class="mt-12 grid grid-cols-1 gap-8 sm:grid-cols-2 lg:grid-cols-3">
+                <div class="bg-green-50 rounded-lg shadow-md overflow-hidden">
+                    <div class="p-6">
+                        <h3 class="text-xl font-bold text-gray-900 mb-4">Build a Capsule Wardrobe</h3>
+                        <p class="text-gray-700 mb-4">Learn how to create a versatile wardrobe with fewer, better-quality pieces that mix and match effortlessly.</p>
+                        <ul class="space-y-2 text-gray-600">
+                            <li class="flex items-center">
+                                <i class="fas fa-check-circle text-green-500 mr-2"></i>
+                                Identify your personal style
+                            </li>
+                            <li class="flex items-center">
+                                <i class="fas fa-check-circle text-green-500 mr-2"></i>
+                                Choose versatile basics
+                            </li>
+                            <li class="flex items-center">
+                                <i class="fas fa-check-circle text-green-500 mr-2"></i>
+                                Select quality over quantity
+                            </li>
+                            <li class="flex items-center">
+                                <i class="fas fa-check-circle text-green-500 mr-2"></i>
+                                Create multiple outfits from fewer pieces
+                            </li>
+                        </ul>
+                        <a href="#" class="mt-6 inline-flex items-center text-green-600 hover:text-green-800">
+                            Read the Guide
+                            <i class="fas fa-arrow-right ml-2"></i>
+                        </a>
+                    </div>
+                </div>
+
+                <div class="bg-green-50 rounded-lg shadow-md overflow-hidden">
+                    <div class="p-6">
+                        <h3 class="text-xl font-bold text-gray-900 mb-4">Clothing Care & Repair</h3>
+                        <p class="text-gray-700 mb-4">Extend the life of your garments with proper care techniques and basic repair skills.</p>
+                        <ul class="space-y-2 text-gray-600">
+                            <li class="flex items-center">
+                                <i class="fas fa-check-circle text-green-500 mr-2"></i>
+                                Proper washing and drying methods
+                            </li>
+                            <li class="flex items-center">
+                                <i class="fas fa-check-circle text-green-500 mr-2"></i>
+                                Basic mending techniques
+                            </li>
+                            <li class="flex items-center">
+                                <i class="fas fa-check-circle text-green-500 mr-2"></i>
+                                Button replacement and seam repair
+                            </li>
+                            <li class="flex items-center">
+                                <i class="fas fa-check-circle text-green-500 mr-2"></i>
+                                Stain removal guide
+                            </li>
+                        </ul>
+                        <a href="#" class="mt-6 inline-flex items-center text-green-600 hover:text-green-800">
+                            Learn Basic Repairs
+                            <i class="fas fa-arrow-right ml-2"></i>
+                        </a>
+                    </div>
+                </div>
+
+                <div class="bg-green-50 rounded-lg shadow-md overflow-hidden">
+                    <div class="p-6">
+                        <h3 class="text-xl font-bold text-gray-900 mb-4">Fabric Education</h3>
+                        <p class="text-gray-700 mb-4">Understand different fabric types, their environmental impact, and how to choose better materials.</p>
+                        <ul class="space-y-2 text-gray-600">
+                            <li class="flex items-center">
+                                <i class="fas fa-check-circle text-green-500 mr-2"></i>
+                                Natural vs. synthetic fibers
+                            </li>
+                            <li class="flex items-center">
+                                <i class="fas fa-check-circle text-green-500 mr-2"></i>
+                                Environmental impact comparison
+                            </li>
+                            <li class="flex items-center">
+                                <i class="fas fa-check-circle text-green-500 mr-2"></i>
+                                Innovative sustainable materials
+                            </li>
+                            <li class="flex items-center">
+                                <i class="fas fa-check-circle text-green-500 mr-2"></i>
+                                Reading fabric labels
+                            </li>
+                        </ul>
+                        <a href="#" class="mt-6 inline-flex items-center text-green-600 hover:text-green-800">
+                            Explore Fabric Guide
+                            <i class="fas fa-arrow-right ml-2"></i>
+                        </a>
+                    </div>
+                </div>
+
+                <div class="bg-green-50 rounded-lg shadow-md overflow-hidden">
+                    <div class="p-6">
+                        <h3 class="text-xl font-bold text-gray-900 mb-4">Upcycling Projects</h3>
+                        <p class="text-gray-700 mb-4">Transform old garments into new, useful items with these creative upcycling tutorials.</p>
+                        <ul class="space-y-2 text-gray-600">
+                            <li class="flex items-center">
+                                <i class="fas fa-check-circle text-green-500 mr-2"></i>
+                                T-shirt to tote bag conversion
+                            </li>
+                            <li class="flex items-center">
+                                <i class="fas fa-check-circle text-green-500 mr-2"></i>
+                                Jeans to shorts transformation
+                            </li>
+                            <li class="flex items-center">
+                                <i class="fas fa-check-circle text-green-500 mr-2"></i>
+                                Button-up shirt to apron
+                            </li>
+                            <li class="flex items-center">
+                                <i class="fas fa-check-circle text-green-500 mr-2"></i>
+                                Sweater to pillow cover
+                            </li>
+                        </ul>
+                        <a href="#" class="mt-6 inline-flex items-center text-green-600 hover:text-green-800">
+                            View DIY Projects
+                            <i class="fas fa-arrow-right ml-2"></i>
+                        </a>
+                    </div>
+                </div>
+
+                <div class="bg-green-50 rounded-lg shadow-md overflow-hidden">
+                    <div class="p-6">
+                        <h3 class="text-xl font-bold text-gray-900 mb-4">Sustainable Shopping Guide</h3>
+                        <p class="text-gray-700 mb-4">Learn how to make better purchasing decisions and identify truly sustainable fashion brands.</p>
+                        <ul class="space-y-2 text-gray-600">
+                            <li class="flex items-center">
+                                <i class="fas fa-check-circle text-green-500 mr-2"></i>
+                                Understanding sustainability certifications
+                            </li>
+                            <li class="flex items-center">
+                                <i class="fas fa-check-circle text-green-500 mr-2"></i>
+                                Questions to ask brands
+                            </li>
+                            <li class="flex items-center">
+                                <i class="fas fa-check-circle text-green-500 mr-2"></i>
+                                Identifying greenwashing
+                            </li>
+                            <li class="flex items-center">
+                                <i class="fas fa-check-circle text-green-500 mr-2"></i>
+                                Price vs. true cost analysis
+                            </li>
+                        </ul>
+                        <a href="#" class="mt-6 inline-flex items-center text-green-600 hover:text-green-800">
+                            Download Guide
+                            <i class="fas fa-arrow-right ml-2"></i>
+                        </a>
+                    </div>
+                </div>
+
+                <div class="bg-green-50 rounded-lg shadow-md overflow-hidden">
+                    <div class="p-6">
+                        <h3 class="text-xl font-bold text-gray-900 mb-4">Microplastic Reduction</h3>
+                        <p class="text-gray-700 mb-4">Practical ways to reduce microplastic pollution from your synthetic clothing.</p>
+                        <ul class="space-y-2 text-gray-600">
+                            <li class="flex items-center">
+                                <i class="fas fa-check-circle text-green-500 mr-2"></i>
+                                Microplastic-capturing laundry bags
+                            </li>
+                            <li class="flex items-center">
+                                <i class="fas fa-check-circle text-green-500 mr-2"></i>
+                                Washing machine filters
+                            </li>
+                            <li class="flex items-center">
+                                <i class="fas fa-check-circle text-green-500 mr-2"></i>
+                                Optimal washing settings
+                            </li>
+                            <li class="flex items-center">
+                                <i class="fas fa-check-circle text-green-500 mr-2"></i>
+                                Transitioning to natural fibers
+                            </li>
+                        </ul>
+                        <a href="#" class="mt-6 inline-flex items-center text-green-600 hover:text-green-800">
+                            Explore Solutions
+                            <i class="fas fa-arrow-right ml-2"></i>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer class="bg-gray-800">
+        <div class="max-w-7xl mx-auto py-12 px-4 sm:px-6 lg:px-8">
+            <div class="xl:grid xl:grid-cols-3 xl:gap-8">
+                <div class="space-y-8 xl:col-span-1">
+                    <h2 class="text-2xl font-bold text-white">EcoThreads</h2>
+                    <p class="text-gray-300 text-base">
+                        Working toward a more sustainable future for fashion, one garment at a time.
+                    </p>
+                    <div class="flex space-x-6">
+                        <a href="#" class="text-gray-400 hover:text-gray-300">
+                            <i class="fab fa-facebook-f"></i>
+                        </a>
+                        <a href="#" class="text-gray-400 hover:text-gray-300">
+                            <i class="fab fa-instagram"></i>
+                        </a>
+                        <a href="#" class="text-gray-400 hover:text-gray-300">
+                            <i class="fab fa-twitter"></i>
+                        </a>
+                        <a href="#" class="text-gray-400 hover:text-gray-300">
+                            <i class="fab fa-youtube"></i>
+                        </a>
+                    </div>
+                </div>
+                <div class="mt-12 grid grid-cols-2 gap-8 xl:mt-0 xl:col-span-2">
+                    <div class="md:grid md:grid-cols-2 md:gap-8">
+                        <div>
+                            <h3 class="text-sm font-semibold text-gray-400 tracking-wider uppercase">
+                                Resources
+                            </h3>
+                            <ul class="mt-4 space-y-4">
+                                <li>
+                                    <a href="#" class="text-base text-gray-300 hover:text-white">
+                                        Education
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="#" class="text-base text-gray-300 hover:text-white">
+                                        Blog
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="#" class="text-base text-gray-300 hover:text-white">
+                                        Industry Reports
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="#" class="text-base text-gray-300 hover:text-white">
+                                        Research
+                                    </a>
+                                </li>
+                            </ul>
+                        </div>
+                        <div class="mt-12 md:mt-0">
+                            <h3 class="text-sm font-semibold text-gray-400 tracking-wider uppercase">
+                                Get Involved
+                            </h3>
+                            <ul class="mt-4 space-y-4">
+                                <li>
+                                    <a href="#" class="text-base text-gray-300 hover:text-white">
+                                        Exchange Platform
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="#" class="text-base text-gray-300 hover:text-white">
+                                        Donation Program
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="#" class="text-base text-gray-300 hover:text-white">
+                                        Volunteer
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="#" class="text-base text-gray-300 hover:text-white">
+                                        Partners
+                                    </a>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="md:grid md:grid-cols-2 md:gap-8">
+                        <div>
+                            <h3 class="text-sm font-semibold text-gray-400 tracking-wider uppercase">
+                                Company
+                            </h3>
+                            <ul class="mt-4 space-y-4">
+                                <li>
+                                    <a href="#" class="text-base text-gray-300 hover:text-white">
+                                        About Us
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="#" class="text-base text-gray-300 hover:text-white">
+                                        Our Team
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="#" class="text-base text-gray-300 hover:text-white">
+                                        Careers
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="#" class="text-base text-gray-300 hover:text-white">
+                                        Contact
+                                    </a>
+                                </li>
+                            </ul>
+                        </div>
+                        <div class="mt-12 md:mt-0">
+                            <h3 class="text-sm font-semibold text-gray-400 tracking-wider uppercase">
+                                Legal
+                            </h3>
+                            <ul class="mt-4 space-y-4">
+                                <li>
+                                    <a href="#" class="text-base text-gray-300 hover:text-white">
+                                        Privacy
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="#" class="text-base text-gray-300 hover:text-white">
+                                        Terms
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="#" class="text-base text-gray-300 hover:text-white">
+                                        Cookie Policy
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="#" class="text-base text-gray-300 hover:text-white">
+                                        Accessibility
+                                    </a>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="mt-12 border-t border-gray-700 pt-8">
+                <p class="text-base text-gray-400 xl:text-center">
+                    &copy; 2025 EcoThreads. All rights reserved.
+                </p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Chart.js implementation for recycling rates
+        document.addEventListener('DOMContentLoaded', function() {
+            const ctx = document.getElementById('recyclingRatesChart').getContext('2d');
+            
+            const recyclingChart = new Chart(ctx, {
+                type: 'bar',
+                data: {
+                    labels: ['Patagonia', 'Eileen Fisher', 'Reformation', 'Levi\'s', 'The North Face', 'H&M', 'Zara', 'Nike', 'Fast Fashion Average'],
+                    datasets: [{
+                        label: 'Recycling Rate (%)',
+                        data: [68, 63, 47, 35, 29, 18, 14, 12, 5],
+                        backgroundColor: [
+                            'rgba(76, 175, 80, 0.8)',
+                            'rgba(76, 175, 80, 0.7)',
+                            'rgba(76, 175, 80, 0.6)',
+                            'rgba(76, 175, 80, 0.5)',
+                            'rgba(76, 175, 80, 0.4)',
+                            'rgba(255, 205, 86, 0.6)',
+                            'rgba(255, 159, 64, 0.6)',
+                            'rgba(255, 159, 64, 0.5)',
+                            'rgba(255, 99, 132, 0.6)'
+                        ],
+                        borderColor: [
+                            'rgb(76, 175, 80)',
+                            'rgb(76, 175, 80)',
+                            'rgb(76, 175, 80)',
+                            'rgb(76, 175, 80)',
+                            'rgb(76, 175, 80)',
+                            'rgb(255, 205, 86)',
+                            'rgb(255, 159, 64)',
+                            'rgb(255, 159, 64)',
+                            'rgb(255, 99, 132)'
+                        ],
+                        borderWidth: 1
+                    },
+                    {
+                        label: 'Recycled Materials Used (%)',
+                        data: [75, 58, 52, 42, 33, 20, 15, 14, 3],
+                        backgroundColor: 'rgba(54, 162, 235, 0.5)',
+                        borderColor: 'rgb(54, 162, 235)',
+                        borderWidth: 1,
+                        type: 'line'
+                    }]
+                },
+                options: {
+                    responsive: true,
+                    maintainAspectRatio: false,
+                    plugins: {
+                        legend: {
+                            position: 'top',
+                        },
+                        tooltip: {
+                            callbacks: {
+                                afterLabel: function(context) {
+                                    const brandInfo = {
+                                        'Patagonia': 'Leader in take-back programs and repair initiatives',
+                                        'Eileen Fisher': 'Pioneering Renew program since 2009',
+                                        'Reformation': 'RefRecycling program with innovative fiber technology',
+                                        'Levi\'s': 'Blue Jeans Go Green partner with denim recycling',
+                                        'The North Face': 'Clothes The Loop program recycles all brands',
+                                        'H&M': 'Global garment collection but low closed-loop recycling',
+                                        'Zara': 'Limited recycling infrastructure despite collection bins',
+                                        'Nike': 'Grind program focuses on footwear recycling',
+                                        'Fast Fashion Average': 'Typical fast fashion brands have minimal recycling'
+                                    };
+                                    return brandInfo[context.label];
+                                }
+                            }
+                        }
+                    },
+                    scales: {
+                        y: {
+                            beginAtZero: true,
+                            title: {
+                                display: true,
+                                text: 'Percentage (%)'
+                            },
+                            max: 80
+                        }
+                    }
+                }
+            });
+        });
+    </script>
+</body>
+</html>
